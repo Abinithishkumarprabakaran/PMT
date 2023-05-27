@@ -16,7 +16,7 @@ const formValidationSchema = yup.object({
           .required()
 })
 
-export function Confirmation() {
+export default function Confirmation() {
 
   const {handleSubmit,handleChange,handleBlur,values,errors,touched} = useFormik({
     initialValues: { 

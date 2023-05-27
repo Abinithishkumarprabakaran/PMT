@@ -1,5 +1,5 @@
 
-export function PageNotFound() {
+export default function PageNotFound() {
   return (
     <div className="notfound-page">
       <h1>Page Not Found</h1>

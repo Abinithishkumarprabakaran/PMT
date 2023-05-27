@@ -1,13 +1,7 @@
-import { Confirmation } from './components/Login/Confirmation';
-import { ForgotPassword } from './components/Login/ForgotPassword';
-import { Login } from './components/Login/Login'
-import { PageNotFound } from './components/PageNotFound/PageNotFound';
-import { Profile } from './components/Profile/Profile';
-import { ChangePassword } from './components/Signup/ChangePassword';
-import { Signup } from './components/Signup/Signup'
 import './App.css';
 
 import { Routes, Route, Link, useNavigate, Navigate } from "react-router-dom";
+import { Board, ChangePassword, Confirmation, ForgotPassword, Login, PageNotFound, Signup } from './components';
 
 function App() {
 
@@ -27,12 +21,13 @@ function App() {
         <Route path="/confirmation" element={ <Confirmation /> } />
         <Route path="/changepassword/:id" element={ 
           <ProtectedRoutePasswordChange>
-            <ChangePassword /> 
+            <ChangePassword />
           </ProtectedRoutePasswordChange>} />
         <Route path="/profile" element={ 
-            <ProtectedRouteProfile>
-              <Profile />
-            </ProtectedRouteProfile> }/>
+            <ProtectedRouteBoard>
+              <Board />
+            </ProtectedRouteBoard> 
+          }/>
         <Route path="*" element={ <PageNotFound /> } />
       </Routes>
       
@@ -40,7 +35,7 @@ function App() {
   )
 }
 
-function ProtectedRouteProfile({ children }) {
+function ProtectedRouteBoard({ children }) {
   const token = localStorage.getItem('token');
   return (
     token ?

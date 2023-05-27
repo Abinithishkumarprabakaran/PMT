@@ -20,7 +20,7 @@ const formValidationSchema = yup.object({
           .min(8)
 })
 
-export function ChangePassword() {
+export default function ChangePassword() {
 
   const {id} = useParams();
 

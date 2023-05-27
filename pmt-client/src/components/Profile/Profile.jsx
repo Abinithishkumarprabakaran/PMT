@@ -1,4 +1,4 @@
-export function Profile() {
+export default function Profile() {
   return (
     <div className="profile">
       <h1>Welcome to the Profile</h1>

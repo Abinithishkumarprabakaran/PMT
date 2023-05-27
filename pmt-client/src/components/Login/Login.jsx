@@ -20,7 +20,7 @@ const formValidationSchema = yup.object({
           .min(8)
 })
 
-export function Login() {
+export default function Login() {
 
   // localStorage.clear()
   // window.location.href ='/'

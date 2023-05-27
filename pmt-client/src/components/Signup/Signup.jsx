@@ -23,7 +23,7 @@ const formValidationSchema = yup.object({
           .min(8)
 })
 
-export function Signup() {
+export default function Signup() {
 
   const [show, setShow] = useState(false)
 

@@ -15,7 +15,7 @@ const formValidationSchema = yup.object({
           .required()
 })
 
-export function ForgotPassword() {
+export default function ForgotPassword() {
 
   const navigate = useNavigate();
 
