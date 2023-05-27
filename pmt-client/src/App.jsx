@@ -63,5 +63,3 @@ function ProtectedRoutePasswordChange({ children }) {
 }
 
 export default App
-
-

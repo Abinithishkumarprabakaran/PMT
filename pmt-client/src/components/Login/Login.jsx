@@ -32,6 +32,7 @@ export function Login() {
 
     validationSchema: formValidationSchema,
     onSubmit: (loginUser) => { 
+          console.log("login Button")
           existedUser(loginUser)
     }
   });
@@ -111,7 +112,7 @@ const existedUser = async (loginUser) => {
                   Login
               </Button> 
               <Link className="fp" href="/confirmation"> <span>Forgot Password?</span> </Link>
-              <span>Not a Member <Link href='/register'>Sign up</Link></span>
+              <span>Not a Member <Link href='/signup'>Sign up</Link></span>
             </div>
      
           </form>
