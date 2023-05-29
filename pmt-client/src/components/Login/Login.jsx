@@ -65,7 +65,7 @@ const existedUser = async (loginUser) => {
       const result = await data.json()
       // console.log("success", result)
       localStorage.setItem('token', result.token)
-      navigate('/profile')
+      navigate(`/${result.userId}/project`)
     }
 };
   return (

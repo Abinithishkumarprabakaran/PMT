@@ -1,7 +1,7 @@
 import './App.css';
 
 import { Routes, Route, Link, useNavigate, Navigate } from "react-router-dom";
-import { Board, ChangePassword, Confirmation, ForgotPassword, Login, PageNotFound, Signup } from './components';
+import { AppLayout, Board, ChangePassword, Confirmation, ForgotPassword, Login, PageNotFound, Signup } from './components';
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className='App'>
 
       <Routes>
         <Route path="/" element={ <Login /> } />
@@ -23,9 +23,11 @@ function App() {
           <ProtectedRoutePasswordChange>
             <ChangePassword />
           </ProtectedRoutePasswordChange>} />
-        <Route path="/profile" element={ 
+        <Route path="/:id/project" element={ 
             <ProtectedRouteBoard>
-              <Board />
+              <AppLayout>
+                <Board />
+              </AppLayout>
             </ProtectedRouteBoard> 
           }/>
         <Route path="*" element={ <PageNotFound /> } />

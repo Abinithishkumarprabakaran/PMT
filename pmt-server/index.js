@@ -2,7 +2,8 @@ import express from "express";
 import * as dotenv from 'dotenv';
 import { MongoClient } from "mongodb";
 import cors from 'cors';
-import userRouter from "./router/users.router.js"
+import userRouter from "./router/users.router.js";
+import projectRouter from "./router/projects.router.js"
 
 dotenv.config();
 export const app = express();
@@ -22,6 +23,7 @@ app.get("/", function (request, response) {
 });
 
 app.use("/users", userRouter);
+app.use("/:id/project", projectRouter)
 
 app.listen(PORT, () => console.log(`The server started in: ${PORT} ✨✨`));
 
