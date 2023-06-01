@@ -23,7 +23,7 @@ app.get("/", function (request, response) {
 });
 
 app.use("/users", userRouter);
-app.use("/:id/project", projectRouter)
+app.use("/projects", projectRouter)
 
 app.listen(PORT, () => console.log(`The server started in: ${PORT} ✨✨`));
 
