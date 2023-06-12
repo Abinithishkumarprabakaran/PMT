@@ -1,26 +1,16 @@
 import './App.css';
 
 import { Routes, Route, Link, useNavigate, Navigate } from "react-router-dom";
-import { AppLayout, Board, ChangePassword, Confirmation, CreateProject, ForgotPassword, Login, PageNotFound, Signup} from './components';
+import { AppLayout, Board, ChangePassword, Confirmation, ForgotPassword, Login, PageNotFound, Signup} from './components';
 
-
-
-import { useState, createContext } from 'react';
-
-
-export const triggerCtx = createContext();
+// import { useState, createContext } from 'react';
 
 function App() {
 
-  const [projectButton, setProjectButton] = useState(false);
-
   return (
-    // <triggerCtx.Provider value={[projectButton, setProjectButton]}>
-      <AppLayout>
-        
-        <Board />
+      <div className='App'>
 
-        {/* <Routes>
+        <Routes>
           <Route path="/" element={ <Login /> } />
           <Route path="/signup" element={ <Signup /> } />
           <Route path="/forgotpassword" element={ <ForgotPassword /> } />
@@ -30,17 +20,18 @@ function App() {
               <ChangePassword />
             </ProtectedRoutePasswordChange>
           } />
-          <Route path="/createproject" element={ <CreateProject /> }/>
+          {/* <Route path="/createproject" element={ <CreateProject /> }/> */}
           <Route path="/projects/:id" element={ 
             <ProtectedRouteBoard>
+              <AppLayout>
                 <Board />
+              </AppLayout>
             </ProtectedRouteBoard> 
           }/>
           <Route path="*" element={ <PageNotFound /> } />
-        </Routes> */}
+        </Routes>
         
-      </AppLayout>
-    // </triggerCtx.Provider>
+      </div>
   )
 }
 

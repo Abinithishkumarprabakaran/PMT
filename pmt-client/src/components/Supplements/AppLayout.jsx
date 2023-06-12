@@ -3,6 +3,7 @@ import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 
 const AppLayout = ({ children }) => {
+
     return (
         <div className='bg-white'>
             {/* <Navbar /> */}

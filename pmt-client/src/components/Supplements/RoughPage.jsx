@@ -7,7 +7,6 @@ import toast from 'react-hot-toast'
 import { useFormik } from 'formik'
 import * as yup from "yup";
 import { useNavigate } from 'react-router-dom'
-import { API } from '../../global'
 
 const formValidationSchema = yup.object({
                 title: yup
@@ -29,10 +28,8 @@ const AddProjectModal = ({ isModalOpen, closeModal, edit = false, id }) => {
       },
     validationSchema: formValidationSchema,
     onSubmit: (newProj) => {
-        
         let newProject = []
         newProject.push(newProj)
-        console.log("client side:", newProject)
         addProject(newProject)
     }
   });
@@ -50,7 +47,7 @@ const AddProjectModal = ({ isModalOpen, closeModal, edit = false, id }) => {
             },
         });
 
-        navigate(`/projects/${id}`)
+        navigate("/projects")
     };
 
     useEffect(() => {

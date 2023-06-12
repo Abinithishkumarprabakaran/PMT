@@ -113,7 +113,7 @@ export default function Board() {
 
   useEffect(() => {
     if (!isAddTaskModalOpen || isRenderChange) {
-      axios.get(`http://localhost:9000/project/${projectId}`)
+      axios.get(`http://localhost:4000/projects/${projectId}`)
         .then((res) => {
           setTitle(res.data[0].title)
           setColumns({

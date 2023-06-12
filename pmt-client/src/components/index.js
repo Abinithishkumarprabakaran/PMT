@@ -22,6 +22,3 @@ export { default as Navbar } from './Supplements/Navbar';
 export { default as ProjectDropDown } from './Supplements/ProjectDropDown';
 export { default as Sidebar } from './Supplements/Sidebar';
 export { default as TaskModal } from './Supplements/TaskModal';
-
-
-export { default as CreateProject } from './Crudops/CreateProject';

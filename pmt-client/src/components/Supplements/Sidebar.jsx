@@ -1,9 +1,14 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import AddProjectModal from './AddProjectModal'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 // import toast from 'react-hot-toast'
+
 const Sidebar = () => {
+
+  const { id } = useParams();
+
+  console.log(id)
 
   const [isModalOpen, setModalState] = useState(false)
   const [projects, setProjects] = useState([])
@@ -24,7 +29,7 @@ const Sidebar = () => {
   }, [])
 
   const projectData = () => {
-    axios.get('http://localhost:9000/projects/')
+    axios.get(`http://localhost:4000/projects/${id}`)
       .then((res) => {
         setProjects(res.data)
       })
@@ -61,7 +66,7 @@ const Sidebar = () => {
           </Link>
         ))}
       </ul>
-      <AddProjectModal isModalOpen={isModalOpen} closeModal={closeModal} />
+      <AddProjectModal isModalOpen={isModalOpen} closeModal={closeModal} id={id}/>
     </div>
   )
 }
